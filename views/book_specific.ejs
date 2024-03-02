@@ -1,0 +1,14 @@
+<%- include('header.ejs') %>
+<h1><%= data.title %></h1>
+<p><strong>Author:</strong> <%= data.author %></p>
+<p><strong>Notes:</strong> <%= data.notes %></p>
+
+<form action="/delete" method="post" style="display: inline;">
+    <input type="hidden" name="bookId" value="<%= data.id %>">
+    <button type="submit">Delete</button>
+</form>
+
+<form action="/new_book/<%= data.id %>" method="post" style="display: inline;">
+    <input type="hidden" name="bookID" value="<%= data.id %>">
+    <button type="submit">Edit</button>
+</form>

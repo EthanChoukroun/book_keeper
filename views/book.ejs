@@ -1,0 +1,17 @@
+<%- include('header.ejs') %>
+<form action="<%= locals.data ? '/edited' : '/' %>" method="POST">
+    <input type="hidden" name="id" value="<%= locals.data ? data.id : '' %>">
+
+    <label for="book-title">Book Title:</label><br>
+    <input type="text" id="book-title" name="title" value="<%= locals.data ? data.title : '' %>" required><br><br>
+
+    <label for="book-author">Book Author:</label><br>
+    <input type="text" id="book-author" name="author" value="<%= locals.data ? data.author : '' %>" required><br><br>
+
+    <label for="personal-note">Personal Note:</label><br>
+    <textarea id="personal-note" name="notes" rows="4" cols="50" required><%= locals.data ? data.notes : '' %></textarea><br><br>
+
+    <button type="button">Generate Summary</button><br><br>
+
+    <input type="submit" value="Submit">
+</form>

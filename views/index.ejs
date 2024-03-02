@@ -1,1 +1,20 @@
-<%- include(header.ejs) %>
+<%- include('header.ejs') %>
+<h1>Book Keeper</h1>
+<div>
+    <p>Hello, welcome to the Book Keeper app, please feel free to write about your favorite book and let others see!</p>
+</div>
+<form action="/new_book" method="get">
+    <button>New</button>
+</form>
+<div>
+    <% data.forEach((book) => { %>
+        <div>
+            <a href="/book/<%= book.id %>"><%= book.title %></a>
+        </div>
+        <div>
+            <%= book.author %>
+        </div>
+    <% }) %>
+</div>
+
+
